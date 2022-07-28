@@ -1,2 +1,2 @@
 # razmikd-pub
-Razmik's Public Repo for CIT93
+Razmik's Public Repo for CIT93.
