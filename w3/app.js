@@ -17,19 +17,19 @@ let dailyDecision = function (hour) {
   if (hour >= 8 && hour < 9) {
     let runningTime = "lets go for a run";
     return `It's 8 a.m., ${runningTime}.`;
-  } else if (hour >= 9 && hour < 10) {
+  } else if (hour >= 9 && hour <= 10) {
     let answerEmail = "time to check my emails";
     return `It's 9 a.m. Okay, ${answerEmail}. After that, I'll have my lunch break.`;
   } else if (hour > 10 && hour <= 11) {
     let lunchBreakTime = "take lunch break";
     return `I often skip breakfast and ${lunchBreakTime} around 11 a.m.`;
-  } else if (hour > 11 && hour < 13) {
+  } else if (hour > 11 && hour <= 13) {
     let availableTime = "have 1 hour free time";
     return `It's 12 p.m., I ${availableTime}.`;
-  } else if (hour > 13 && hour <= 15) {
-    let doHomework = "Time to do some homework";
-    return `It's 13 p.m., ${doHomework}`;
-  } else if (hour > 15 && hour <= 16) {
+  } else if (hour > 13 && hour < 15) {
+    let doHomework = "time to do some homework";
+    return `It's ${doHomework}`;
+  } else if (hour >= 15 && hour < 17) {
     let zoomMeeting = "zoom meeting in 15:30";
     return `It's 15 p.m., get ready for ${zoomMeeting}`;
   } else {
