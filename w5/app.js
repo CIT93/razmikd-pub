@@ -5,7 +5,9 @@ const showOnPage = function (text) {
   outputDiv.append(newParagraph);
 };
 
-showOnPage("<b>Raz's Daily Decisions</b>");
+showOnPage(
+  `<h3><b>---------------------> Raz's Daily Decisions <---------------------</b></h3>`
+);
 
 const dailyDecisions = [
   "Running time",
@@ -19,35 +21,15 @@ const dailyDecisions = [
 dailyDecisions.splice(3, 1, "Walk my dog");
 dailyDecisions.push("Homework assignments");
 
-showOnPage(`I have ${dailyDecisions.length} daily things to do!`);
+showOnPage(
+  `<b>I have ${dailyDecisions.length} daily things to do!</b> <br> ___________________`
+);
 
 dailyDecisions.forEach(function (dailyDecisions, index) {
   const num = index + 1;
   showOnPage(`${num}. ${dailyDecisions}`);
 });
 
-homeworkCheck = function (
-  totalAssignment,
-  daysOfWeek,
-  dueAssignment,
-  dailyScheduledAssignment
-) {
-  showOnPage(`<b>${daysOfWeek}:</b>`);
-  showOnPage(`Total ${totalAssignment} assignments left for the week.`);
-  showOnPage(`There are ${dueAssignment} assignments due tonight 11.59pm.`);
-  showOnPage(
-    `Initially ${dailyScheduledAssignment} assignments planned to completed for today.`
-  );
-  if (dueAssignment > dailyScheduledAssignment) {
-    showOnPage(
-      `<b>Unexpected assignment for today. I need to work a little more than previously planned.</b>`
-    );
-  } else if (dueAssignment <= dailyScheduledAssignment) {
-    showOnPage(
-      `<b>There are no unexpected assignments, which will prevent me from continuing with my previously planned weekly routine.</b>`
-    );
-  }
-};
 startTimeDecision = function (hour) {
   if (hour >= 8 && hour < 9) {
     return `It's 8 a.m., ${dailyDecisions[0]}.`;
@@ -101,6 +83,65 @@ const randomizeNum3 = function (min3, max3) {
   return Math.floor(Math.random() * (max3 - min3 + 1)) + min3;
 };
 
+const guess1 = function (num) {
+  if (num <= 7) {
+    return `<b>There are no unexpected assignments, which will prevent me from continuing with my previously planned weekly routine.</b>`;
+  } else if (num > 7) {
+    return `<b>Unexpected assignment for today. I need to work a little more than previously planned.</b>`;
+  }
+};
+
+const homeworkCheck = [
+  {
+    day: "Monday",
+    totalAssignments: 35,
+    dueAssignments: randomizeNum1(5, 10),
+    initiallyPlannedAssignments: 7,
+    unplannedDueAssignments: undefined,
+  },
+  {
+    day: "Tuesday",
+    totalAssignments: 28,
+    dueAssignments: randomizeNum2(5, 10),
+    initiallyPlannedAssignments: 7,
+    unplannedDueAssignments: undefined,
+  },
+  {
+    day: "Wednesday",
+    totalAssignments: 21,
+    dueAssignments: randomizeNum3(5, 10),
+    initiallyPlannedAssignments: 7,
+    unplannedDueAssignments: undefined,
+  },
+  {
+    day: "Thursday",
+    totalAssignments: 14,
+    dueAssignments: randomizeNum1(5, 10),
+    initiallyPlannedAssignments: 7,
+    unplannedDueAssignments: undefined,
+  },
+  {
+    day: "Friday",
+    totalAssignments: 7,
+    dueAssignments: randomizeNum2(5, 10),
+    initiallyPlannedAssignments: 7,
+    unplannedDueAssignments: undefined,
+  },
+];
+
+const index = homeworkCheck.forEach(function (heading) {
+  showOnPage(`<b>${heading.day}</b>`);
+  showOnPage(
+    `Total Assignments: ${heading.totalAssignments} <br><br> Due Assignments: ${
+      heading.dueAssignments
+    }
+     <br><br> Initially Planned Assignments: ${
+       heading.initiallyPlannedAssignments
+     } <br><br> Unplanned Due Assignments: ${guess1(heading.dueAssignments)}`
+  );
+  showOnPage(`___________________`);
+});
+
 const allDone = function (assignmentQuantity, completedAssignments) {
   if (assignmentQuantity === completedAssignments) {
     return `<b>0 homework assignments over the weekend Yay!! Will have a bit of free time to play video games!!</b>`;
@@ -109,12 +150,6 @@ const allDone = function (assignmentQuantity, completedAssignments) {
   }
 };
 
-showOnPage(`<br><b>Homework Assignments Routine Monday through Friday</b>`);
-homeworkCheck(35, "Monday Homework Assignments", randomizeNum1(7, 10), 7);
-homeworkCheck(28, "Tuesday Homework Assignments", randomizeNum2(7, 10), 7);
-homeworkCheck(20, "Wednesday Homework Assignments", randomizeNum3(7, 10), 7);
-homeworkCheck(13, "Thursday Homework Assignments", randomizeNum1(7, 10), 7);
-homeworkCheck(6, "Friday Homework Assignments", randomizeNum2(5, 8), 6);
 showOnPage(
   `<b>Saturday and Sunday Homework Assignments:</b> <br><br>${allDone(35, 35)}`
 );
