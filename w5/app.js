@@ -65,25 +65,13 @@ showOnPage(
   )}  <---------------------<b>`
 );
 
-const randomizeNum1 = function (min1, max1) {
-  min1 = Math.ceil(min1);
-  max1 = Math.floor(max1);
-  return Math.floor(Math.random() * (max1 - min1 + 1)) + min1;
+const randomizeNum = function (min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-const randomizeNum2 = function (min2, max2) {
-  min2 = Math.ceil(min2);
-  max2 = Math.floor(max2);
-  return Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
-};
-
-const randomizeNum3 = function (min3, max3) {
-  min3 = Math.ceil(min3);
-  max3 = Math.floor(max3);
-  return Math.floor(Math.random() * (max3 - min3 + 1)) + min3;
-};
-
-const guess1 = function (num) {
+const guess = function (num) {
   if (num <= 7) {
     return `<b>There are no unexpected assignments, which will prevent me from continuing with my previously planned weekly routine.</b>`;
   } else if (num > 7) {
@@ -95,35 +83,35 @@ const homeworkCheck = [
   {
     day: "Monday",
     totalAssignments: 35,
-    dueAssignments: randomizeNum1(5, 10),
+    dueAssignments: randomizeNum(5, 10),
     initiallyPlannedAssignments: 7,
     unplannedDueAssignments: undefined,
   },
   {
     day: "Tuesday",
     totalAssignments: 28,
-    dueAssignments: randomizeNum2(5, 10),
+    dueAssignments: randomizeNum(5, 10),
     initiallyPlannedAssignments: 7,
     unplannedDueAssignments: undefined,
   },
   {
     day: "Wednesday",
     totalAssignments: 21,
-    dueAssignments: randomizeNum3(5, 10),
+    dueAssignments: randomizeNum(5, 10),
     initiallyPlannedAssignments: 7,
     unplannedDueAssignments: undefined,
   },
   {
     day: "Thursday",
     totalAssignments: 14,
-    dueAssignments: randomizeNum1(5, 10),
+    dueAssignments: randomizeNum(5, 10),
     initiallyPlannedAssignments: 7,
     unplannedDueAssignments: undefined,
   },
   {
     day: "Friday",
     totalAssignments: 7,
-    dueAssignments: randomizeNum2(5, 10),
+    dueAssignments: randomizeNum(5, 10),
     initiallyPlannedAssignments: 7,
     unplannedDueAssignments: undefined,
   },
@@ -137,7 +125,7 @@ const index = homeworkCheck.forEach(function (heading) {
     }
      <br><br> Initially Planned Assignments: ${
        heading.initiallyPlannedAssignments
-     } <br><br> Unplanned Due Assignments: ${guess1(heading.dueAssignments)}`
+     } <br><br> Unplanned Due Assignments: ${guess(heading.dueAssignments)}`
   );
   showOnPage(`___________________`);
 });
