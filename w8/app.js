@@ -1,62 +1,21 @@
-const header = document.createElement("h1");
-header.textContent = `---------------------> Raz's Daily Decisions <---------------------`;
-document.querySelector("#output").appendChild(header);
+let form = document.getElementById("form");
 
-const dailyDecisions = [
-  "Running time",
-  "Answer emails",
-  "Lunch break",
-  "1 hour free time",
-  "Zoom meeting",
-  "Spend time with family and play ps5",
-];
-
-dailyDecisions.splice(3, 1, "Walk my dog");
-dailyDecisions.push("Homework assignments");
-
-dailyDecisions.forEach(function (dailyDecision) {
-  const li = document.createElement("li");
-  li.textContent = dailyDecision;
-  document.querySelector("#output").appendChild(li);
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  let firstName = document.getElementById("first-name").value;
+  let lastName = document.getElementById("last-name").value;
+  let weekDay = document.getElementById("week-days").value;
+  const p1 = document.createElement("span");
+  p1.textContent = `Hi ${firstName} ${lastName}! Check your ${weekDay} homework assignments below.`;
+  document.querySelector("#summary").prepend(p1);
+  const heading = document.createElement("h3");
+  heading.textContent = `Hi ${firstName} here is your Todo List!`;
+  printWeekDayInfo(weekDay)
+  document.querySelector("header").appendChild(heading);
+  document.getElementById("first-name").value = "";
+  document.getElementById("last-name").value = "";
+  document.getElementById("week-days").value = "Monday";
 });
-
-const totalToDo = document.createElement("h4");
-totalToDo.textContent = `I have ${dailyDecisions.length} daily things to do!`;
-document.querySelector("#output").appendChild(totalToDo);
-
-startTimeDecision = function (hour) {
-  if (hour >= 8 && hour < 9) {
-    return `It's 8 a.m., ${dailyDecisions[0]}.`;
-  } else if (hour >= 9 && hour <= 10) {
-    return `It's 9 a.m. Okay, it's time to ${
-      dailyDecisions[dailyDecisions.length - 6]
-    }. After that, I'll have my lunch break.`;
-  } else if (hour > 10 && hour <= 11) {
-    return `I often skip breakfast and take ${
-      dailyDecisions[dailyDecisions.length - 5]
-    } around 11 a.m.`;
-  } else if (hour > 11 && hour <= 13) {
-    return `It's 12 p.m., I have 1 hour free time lets ${
-      dailyDecisions[dailyDecisions.length - 4]
-    }.`;
-  } else if (hour > 13 && hour < 15) {
-    return `English class ${dailyDecisions[dailyDecisions.length - 3]}`;
-  } else if (hour >= 15 && hour < 17) {
-    return `It's 15 p.m., ${dailyDecisions[dailyDecisions.length - 2]}`;
-  } else if (hour >= 17 && hour < 20) {
-    return `It's 17 p.m., lets do some ${
-      dailyDecisions[dailyDecisions.length - 1]
-    }`;
-  } else {
-    return `It is night time, go to bed.`;
-  }
-};
-
-const toDoTime = document.createElement("h4");
-toDoTime.textContent = `---------------------> ${startTimeDecision(
-  17
-)} <---------------------`;
-document.querySelector("#output").appendChild(toDoTime);
 
 const randomizeNum = function (min, max) {
   min = Math.ceil(min);
@@ -124,39 +83,114 @@ const homeworkCheck = [
   },
 ];
 
-homeworkCheck.forEach(function (heading) {
-  const div = document.createElement("div");
-  div.innerText = `${
-    heading.day
-  } \n ___________________ \n\n Total Assignments: ${
-    heading.totalAssignments
-  } \n\n Due Assignments: ${
-    heading.dueAssignments
-  } \n\n Initially Planned Assignments: ${
-    heading.initiallyPlannedAssignments
-  } \n\n Unplanned Due Assignments: ${guess(heading.dueAssignments)} \n\n`;
-  document.querySelector("#output").appendChild(div);
-});
 
-const allDone = function (assignmentQuantity, completedAssignments) {
-  if (assignmentQuantity === completedAssignments) {
-    return `0 homework assignments over the weekend Yay!! Will have a bit of free time to play video games!!`;
-  } else {
-    return `You still have assignments to do`;
-  }
+const printWeekDayInfo = function (weekDay) {
+  const homeworkForDay = document.createElement("section");
+  const homeworkInfo = homeworkCheck.find(function (a) {
+    return a.day === weekDay
+  })
+homeworkForDay.innerText = `${
+  homeworkInfo.day
+} \n ___________________ \n\n Total Assignments: ${
+  homeworkInfo.totalAssignments
+} \n\n Due Assignments: ${
+  homeworkInfo.dueAssignments
+}  \n\n Initially Planned Assignments: ${
+  homeworkInfo.initiallyPlannedAssignments
+}  \n\n Unplanned Due Assignments: ${guess(
+  homeworkInfo.dueAssignments
+)} \n\n`;
+document.querySelector("#output").appendChild(homeworkForDay);
+
+}
+
+
+const dailyDecisions = [
+  {
+    text: "Running time",
+    completed: true,
+  },
+  {
+    text: "Email check",
+    completed: true,
+  },
+  {
+    text: "Lunch break",
+    completed: true,
+  },
+  {
+    text: "Walk my dog",
+    completed: true,
+  },
+  {
+    text: "Spend time with family and play ps5",
+    completed: true,
+  },
+  {
+    text: "Zoom meeting",
+    completed: false,
+  },
+  {
+    text: "Do Homework",
+    completed: false,
+  },
+];
+
+const filters = {
+  searchText: "",
+  hideCompleted: false,
 };
 
-const summary = document.createElement("h4");
-summary.innerText = `${allDone(35, 35)}`;
-document.querySelector("#output").appendChild(summary);
+const renderTodos = function (dailyDecisions, filters) {
+  const filteredTodos = dailyDecisions.filter(function (todo) {
+    const searchTextMatch = todo.text
+      .toLowerCase()
+      .includes(filters.searchText.toLowerCase());
+    const hideCompletedMatch = !filters.hideCompleted || !todo.completed;
+    return searchTextMatch && hideCompletedMatch;
+  });
 
-let button = document.querySelector("button");
-let msg = document.querySelector("#output");
+  const incompleteDailyDecisions = filteredTodos.filter(function (
+    dailyDecision
+  ) {
+    return !dailyDecision.completed;
+  });
 
-button.addEventListener("click", function (e){
-  if (msg.classList.toggle("reveal")) {
-    e.target.textContent = "Hide";
-  } else {
-    e.target.textContent = "Run My Code";
-  }
+  document.querySelector("#todos").innerHTML = "";
+
+  const total = document.createElement("h4");
+  total.textContent = `You have ${incompleteDailyDecisions.length} daily decisions left for today!`;
+  document.querySelector("#todos").appendChild(total);
+
+  filteredTodos.forEach(function (dailyDecision) {
+    const p = document.createElement("p");
+    p.textContent = dailyDecision.text;
+    document.querySelector("#todos").appendChild(p);
+  });
+};
+
+renderTodos(dailyDecisions, filters);
+
+document.querySelector("#search-text").addEventListener("input", function (e) {
+  filters.searchText = e.target.value;
+  renderTodos(dailyDecisions, filters);
 });
+
+document
+  .querySelector("#add-todo-form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    dailyDecisions.push({
+      text: e.target.elements.newTodo.value,
+      completed: false,
+    });
+    renderTodos(dailyDecisions, filters);
+    e.target.elements.newTodo.value = "";
+  });
+
+document
+  .querySelector("#hide-completed")
+  .addEventListener("change", function (e) {
+    filters.hideCompleted = e.target.checked;
+    renderTodos(dailyDecisions, filters);
+  });

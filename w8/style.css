@@ -1,7 +1,63 @@
-.hide{
-    visibility: hidden;
+body {
+    font-family:Arial, Helvetica, sans-serif;
+}
+#output {
+    text-align: right;
+    border: 3px solid #04AA6D;
+    margin: 1rem;
+    width: 60%;
+    padding: 2rem;
+    position: relative; left: 27rem;
+    background-color: #3fb0ac;
+    color: white;
+    border-radius: 3rem;
 }
 
-.reveal{
-    visibility: visible;
+p {
+    padding-top: 0.5rem;
 }
+
+#submit {
+    background-color: #04AA6D;
+    border-radius: 3rem;
+    color: white;
+    padding: 5px 5px;
+    text-decoration: none;
+    margin: 4px 4px;
+    cursor: pointer;
+}
+
+#todo-output {
+    border-radius: 3rem;
+    position: sticky; bottom: 110rem;
+    text-align: left;
+    padding: 2rem;
+    border: 3px solid ;
+    width: 12%;
+    color: white;
+    background-color: midnightblue;
+}
+#form {
+    text-align: center;
+}
+
+#week-days-list {
+    position: relative; right: 7.4rem;
+}
+
+header {
+    color: orangered;
+}
+
+section {
+    display: block;
+    padding-top: 0.5rem;
+    text-align: center;
+}
+
+span {
+    color:blue;
+    display: grid;
+    font-size: larger;
+    }
+    

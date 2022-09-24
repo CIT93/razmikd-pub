@@ -8,8 +8,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button>Run My Code</button>
-<div style="text-align: center; border: 3px solid green; font-family: Arial, Helvetica, sans-serif;" id="output" class="hide"></div>
+<div id="output">
+<form id="form">
+        Enter Your Name: <input type="text" placeholder="First name" name="firstName" id="first-name" required>
+        <input type="text" placeholder="Last name" name="lastName" id="last-name" required>
+        <input type="submit" id="submit" value="Submit">
+    <br>
+   <div>
+    Current Day: <select id="week-days">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+    </select>
+   </div>
+    <p id="summary"></p>
+</form>
+</div>
+<div id="todo-output">
+    <header></header>
+    <input id="search-text" type="text" placeholder="Filter Todos">
+    <hr>
+    <label>
+        Hide completed: <input id="hide-completed" type="checkbox">
+    </label>
+    <hr>
+    <div id="todos"></div>
+    <form id="add-todo-form">
+        <input type="text" name="newTodo" placeholder="Enter something">
+        <br><br>
+        <button>Submit</button>
+    </form>
+</div>
+</div>
+
     <script src="app.js"></script>
 </body>
 </html>
