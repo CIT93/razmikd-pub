@@ -1,63 +1,78 @@
+html,
 body {
-    font-family:Arial, Helvetica, sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
 }
-#output {
-    text-align: right;
-    border: 3px solid #04AA6D;
-    margin: 1rem;
-    width: 60%;
-    padding: 2rem;
-    position: relative; left: 27rem;
-    background-color: #3fb0ac;
-    color: white;
-    border-radius: 3rem;
+body {
+  background-color: #659DBD;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.create-new-homework-page {
+  position: relative;
+  left: 5rem;
+  text-align: left;
+  border: 3px solid #a37942;
+  margin-top: 2rem;
+  width: 80%;
+  padding: 5rem 0 4rem 4rem;
+  background-color: #FBEEC1;
+  border-radius: 3rem;
 }
 
 p {
-    padding-top: 0.5rem;
+  text-align: center;
+  padding-top: 0.5rem;
 }
 
 #submit {
-    background-color: #04AA6D;
-    border-radius: 3rem;
-    color: white;
-    padding: 5px 5px;
-    text-decoration: none;
-    margin: 4px 4px;
-    cursor: pointer;
+  background-color: #3d7697;
+  border-radius: 3rem;
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  margin: 4px 4px;
+  cursor: pointer;
 }
 
-#todo-output {
-    border-radius: 3rem;
-    position: sticky; bottom: 110rem;
-    text-align: left;
-    padding: 2rem;
-    border: 3px solid ;
-    width: 12%;
-    color: white;
-    background-color: midnightblue;
-}
-#form {
-    text-align: center;
+.hide {
+  visibility: hidden;
 }
 
-#week-days-list {
-    position: relative; right: 7.4rem;
+input {
+  margin: 0.4rem 0;
 }
 
-header {
-    color: orangered;
+#filter {
+  position: relative;
+  left: 50rem;
+  bottom: 17.6rem;
+  display: block;
 }
 
-section {
-    display: block;
-    padding-top: 0.5rem;
-    text-align: center;
+#homeworks-output {
+  width: 30%;
+  position: relative;
+  left: 47rem;
+  bottom: 17rem;
 }
 
-span {
-    color:blue;
-    display: grid;
-    font-size: larger;
-    }
-    
+h3 {
+  position: relative;
+  margin-left: 9.2rem;
+  bottom: 42rem;
+  color: mediumblue;
+  position: absolute;
+}
+
+#login-form {
+  background-color: #FBEEC1;
+  border: 3px solid #a37942;
+  font-weight: bolder;
+  border-radius: 3rem;
+  width: 40%;
+  padding: 2rem;
+  position: relative;
+  left: 21rem;
+  top: 15rem;
+  text-align: center;
+}

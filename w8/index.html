@@ -1,50 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div id="output">
-<form id="form">
-        Enter Your Name: <input type="text" placeholder="First name" name="firstName" id="first-name" required>
-        <input type="text" placeholder="Last name" name="lastName" id="last-name" required>
-        <input type="submit" id="submit" value="Submit">
-    <br>
-   <div>
-    Current Day: <select id="week-days">
-        <option value="Monday">Monday</option>
-        <option value="Tuesday">Tuesday</option>
-        <option value="Wednesday">Wednesday</option>
-        <option value="Thursday">Thursday</option>
-        <option value="Friday">Friday</option>
-        <option value="Saturday">Saturday</option>
-        <option value="Sunday">Sunday</option>
-    </select>
-   </div>
-    <p id="summary"></p>
-</form>
-</div>
-<div id="todo-output">
-    <header></header>
-    <input id="search-text" type="text" placeholder="Filter Todos">
-    <hr>
-    <label>
-        Hide completed: <input id="hide-completed" type="checkbox">
-    </label>
-    <hr>
-    <div id="todos"></div>
-    <form id="add-todo-form">
-        <input type="text" name="newTodo" placeholder="Enter something">
-        <br><br>
-        <button>Submit</button>
-    </form>
-</div>
-</div>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="login-page">
+      <form id="login-form">
+        Enter Your Name: <br />
+        <input
+          type="text"
+          placeholder="First Name"
+          name="firstName"
+          id="first-name"
+          required
+        />
+        <br />
+        <input
+          type="text"
+          placeholder="Last Name"
+          name="lastName"
+          id="last-name"
+          required
+        />
+        <br />
+        <input type="submit" id="submit" value="Submit" />
+      </form>
+    </div>
+    <div id="main-page" class="hide">
+      <div class="create-new-homework-page">
+        <div>
+          Current Day:
+          <select id="week-days">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+        </div>
+        <div id="add-new-homework">
+          <form id="add-new-homework-form">
+            <br />
+            Total Assignments:
+            <input
+              id="total-assignments"
+              type="number"
+              min="0"
+              max="12"
+              name="newTodo"
+              required
+            />
+            <br /><br />
+            Due Assignments:
+            <input
+              id="due-assignments"
+              type="number"
+              min="0"
+              max="12"
+              name="newTodo"
+              required
+            />
+            <br /><br />
+            Initially Planned Assignments:
+            <input
+              id="initially-planned-assignments"
+              type="number"
+              min="0"
+              max="12"
+              name="newTodo"
+              required
+            />
+            <br /><br />
+            Unplanned Due Assignments:
+            <input
+              id="unplanned-due-assignments"
+              type="number"
+              min="0"
+              max="12"
+              name="newTodo"
+              required
+            />
+            <br /><br />
+            <input type="submit" value="Create Homework" id="create-homework" />
+          </form>
+          <div id="filter">
+            Filter Day:
+            <select id="homework-list-week-days">
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+            <button id="show-homeworks">Show</button>
+          </div>
+          <div id="homeworks-output"></div>
+        </div>
+      </div>
+      <div id="homeworks-list"></div>
+    </div>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
