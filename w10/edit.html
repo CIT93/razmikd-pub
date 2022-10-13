@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="edit-page">
+      <button id="back-main-page" class="btn">
+        <i class="fa fa-home"></i>Home
+      </button>
+      <br />
+      <br />
+      <form id="update-existing-homework-plan">
+        <select id="week-days" name="weekDays">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+        <br />
+        <br />
+        Total Assignments:
+        <input
+          id="total-assignments"
+          type="number"
+          min="0"
+          max="12"
+          name="totalAssignments"
+          required
+        />
+        <br /><br />
+        Due Assignments:
+        <input
+          id="due-assignments"
+          type="number"
+          min="0"
+          max="12"
+          name="dueAssignments"
+          required
+        />
+        <br /><br />
+        Initially Planned Assignments:
+        <input
+          id="initially-planned-assignments"
+          type="number"
+          min="0"
+          max="12"
+          name="initiallyPlannedAssignments"
+          required
+        />
+        <br /><br />
+        Unplanned Due Assignments:
+        <input
+          id="unplanned-due-assignments"
+          type="number"
+          min="0"
+          max="12"
+          name="unplannedDueAssignments"
+          required
+        />
+        <br /><br />
+        <button id="update-homework-button">Update</button>
+        <button id="remove-homeworkplans-from-edit-page">X</button>
+        <span id="span-element"></span>
+      </form>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js"
+      integrity="sha512-dMDTUgZkz1nUtYksAL8IisEkdCDNBuAC+mSnWRPlANDVvvVnGn9h3xKPOq6Bbr/2sRQMTf6SA7ZlRSnbs7TCAw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="app-functions.js"></script>
+    <script src="app-edits.js"></script>
+  </body>
+</html>
