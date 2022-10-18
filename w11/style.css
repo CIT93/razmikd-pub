@@ -1,0 +1,139 @@
+body {
+  background-color: #659dbd;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-y: auto;
+}
+#main-page {
+  position: absolute;
+  left: 4.7rem;
+  border: 3px solid #a37942;
+  width: 80%;
+  padding-top: 2rem;
+  padding-right: 4rem;
+  padding-left: 4rem;
+  background-color: #fbeec1;
+  border-radius: 3rem;
+}
+
+#created-homework-plans {
+  position: relative;
+  bottom: 5.4rem;
+  text-align: center;
+  float: right;
+}
+
+input {
+  margin: 0.4rem 0;
+}
+
+h3 {
+  color: dodgerblue;
+}
+
+#login-form {
+  font-size: small;
+  background-color: #fbeec1;
+  border: 3px solid #a37942;
+  border-radius: 3rem;
+  width: 40%;
+  padding: 2rem;
+  position: relative;
+  left: 22rem;
+  top: 16rem;
+  text-align: center;
+}
+
+#login-form-button,
+#create-homework-button {
+  background-color: dodgerblue;
+  border-radius: 3rem;
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  margin: 4px 4px;
+  cursor: pointer;
+}
+
+h2 {
+  color: dodgerblue;
+  font-size: medium;
+}
+
+#checkbox-id,
+#sign-out-button,
+#button-id,
+#hide-completed,
+#week-days,
+#back-main-page,
+#update-homework-button,
+#remove-homeworkplans-from-edit-page {
+  cursor: pointer;
+}
+
+#css-homework-plan-el {
+  margin-top: 2rem;
+}
+
+#span-element {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 5px 7px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#edit-page {
+  border: 3px solid #a37942;
+  width: 40%;
+  padding-top: 2rem;
+  padding-right: 6rem;
+  padding-left: 4rem;
+  padding-bottom: 7rem;
+  background-color: #fbeec1;
+  margin: 2rem 0 0 2rem;
+  border-radius: 3rem;
+}
+
+#button-id,
+#remove-homeworkplans-from-edit-page {
+  background-color: rgba(220, 20, 60, 0.779);
+}
+
+#back-main-page {
+  border-radius: 3rem;
+}
+
+#edit-homework-plan {
+  position: relative;
+  top: 14.35rem;
+  right: 1rem;
+  font-size: x-small;
+  border: solid #a37942;
+  background-color: darkgoldenrod;
+  border-radius: 3rem;
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  margin: 4px 4px;
+  cursor: pointer;
+}
+
+#button-id {
+  position: relative;
+  left: 1.5rem;
+}
+
+#update-homework-button {
+  background-color: springgreen;
+}
+
+#checkbox-id {
+  position: relative;
+  right: 3.1rem;
+}
