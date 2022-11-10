@@ -1,0 +1,13 @@
+html {
+  background-color: skyblue;
+}
+
+button {
+  background-color: dodgerblue;
+  border-radius: 3rem;
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  margin: 4px 4px;
+  cursor: pointer;
+}

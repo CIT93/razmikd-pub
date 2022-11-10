@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Happy Cinemas</h1>
+    <h3>Find movie to watch</h3>
+    <div class="movie-form">
+      <form action="" id="input">
+        <div>
+          1. <label for="name">Movie:</label>
+          <select name="firstItem" id="" required>
+            <option value="">--- Select Movie ---</option>
+            <option value="Ticket To Paradise">Ticket to Paradise</option>
+            <option value="Bullet Train">Bullet Train</option>
+            <option value="My Policeman">My Policeman</option>
+            <option value="The Notebook">The Notebook</option>
+            <option value="Smile">Smile</option>
+            <option value="Woman King">Woman King</option>
+            <option value="The Godfather">The Godfather</option>
+            <option value="Forest Gump">Forrest Gump</option>
+            <option value="The Lion King">The Lion King</option>
+            <option value="Joker">Joker</option>
+            <option value="Top Gun">Top Gun: Maverick</option>
+            <option value="Scarface">Scarface</option>
+          </select>
+          <label>Tickets:</label>
+          <select name="firstQty" id="" required>
+            <option value="">--- Select Quantity ---</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <label>Date:</label>
+          <select name="firstDate" id="" required>
+            <option value="">--- Select Date ---</option>
+            <option value="2022-11-09">Wed, Nov 09th</option>
+            <option value="2022-11-10">Thu, Nov 10th</option>
+            <option value="2022-11-11">Fri, Nov 11th</option>
+            <option value="2022-11-12">Sat, Nov 12th</option>
+            <option value="2022-11-13">Sun, Nov 13th</option>
+            <option value="2022-11-14">Mon, Nov 14th</option>
+            <option value="2022-11-15">Tue, Nov 15th</option>
+            <option value="2022-11-16">Wed, Nov 16th</option>
+          </select>
+          <label>Time:</label>
+          <select name="firstTime" id="" required>
+            <option value="">--- Select Time ---</option>
+            <option value="02:00 PM">02:00 PM</option>
+            <option value="04:35 PM">04:35 PM</option>
+            <option value="07:15 PM">07:15 PM</option>
+            <option value="10:05 PM">10:05 PM</option>
+          </select>
+        </div>
+        <br />
+        <div>
+          2. <label>Movie:</label>
+          <select name="secItem" id="" required>
+            <option value="">--- Select Movie ---</option>
+            <option value="Ticket To Paradise">Ticket to Paradise</option>
+            <option value="Bullet Train">Bullet Train</option>
+            <option value="My Policeman">My Policeman</option>
+            <option value="The Notebook">The Notebook</option>
+            <option value="Smile">Smile</option>
+            <option value="Woman King">Woman King</option>
+            <option value="The Godfather">The Godfather</option>
+            <option value="Forest Gump">Forrest Gump</option>
+            <option value="The Lion King">The Lion King</option>
+            <option value="Joker">Joker</option>
+            <option value="Top Gun">Top Gun: Maverick</option>
+            <option value="Scarface">Scarface</option>
+          </select>
+          <label>Tickets:</label>
+          <select name="secQty" id="" required>
+            <option value="">--- Select Quantity ---</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <label>Date:</label>
+          <select name="secDate" id="" required>
+            <option value="">--- Select Date ---</option>
+            <option value="2022-11-09">Wed, Nov 09th</option>
+            <option value="2022-11-10">Thu, Nov 10th</option>
+            <option value="2022-11-11">Fri, Nov 11th</option>
+            <option value="2022-11-12">Sat, Nov 12th</option>
+            <option value="2022-11-13">Sun, Nov 13th</option>
+            <option value="2022-11-14">Mon, Nov 14th</option>
+            <option value="2022-11-15">Tue, Nov 15th</option>
+            <option value="2022-11-16">Wed, Nov 16th</option>
+          </select>
+          <label>Time:</label>
+          <select name="secTime" id="" required>
+            <option value="">--- Select Time ---</option>
+            <option value="02:00 PM">02:00 PM</option>
+            <option value="04:35 PM">04:35 PM</option>
+            <option value="07:15 PM">07:15 PM</option>
+            <option value="10:05 PM">10:05 PM</option>
+          </select>
+        </div>
+        <button id="orders" type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="output-box">
+      <div id="error"></div>
+      <div id="output"></div>
+      <div id="amount"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
