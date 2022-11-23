@@ -1,0 +1,45 @@
+html {
+  background-color: deepskyblue;
+}
+
+h1,
+p,
+label {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #007f00;
+  font-family: cursive;
+}
+
+form {
+  text-align: center;
+}
+
+.output-box {
+  display: flex;
+  width: 50%;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fee332;
+  color: #c6660c;
+  border-radius: 5%;
+}
+
+#output {
+  text-transform: capitalize;
+  text-align: center;
+  text-indent: 4rem;
+  line-height: 2rem;
+  list-style-position: inside;
+}
+
+img {
+  position: relative;
+  top: 1rem;
+  left: 1rem;
+  width: 50px;
+}
